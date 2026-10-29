@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicVerse</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#111;
+            color:white;
+            text-align:center;
+        }
+
+        header{
+            background:#ff4d00;
+            padding:15px;
+        }
+
+        .comic-container{
+            max-width:900px;
+            margin:auto;
+            padding:20px;
+        }
+
+        .comic-page{
+            width:100%;
+            margin-bottom:20px;
+            border-radius:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#ff4d00;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#ff6f3c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ComicVerse</h1>
+</header>
+
+<div class="comic-container">
+    <h2>My First Comic</h2>
+
+    <img id="comicImage" class="comic-page"
+         src="comic1.jpg">
+
+    <br>
+
+    <button onclick="nextPage()">Next Page</button>
+</div>
+
+<script>
+    const pages = [
+        "comic1.jpg",
+        "comic2.jpg",
+        "comic3.jpg",
+        "comic4.jpg"
+    ];
+
+    let currentPage = 0;
+
+    function nextPage(){
+        currentPage++;
+
+        if(currentPage >= pages.length){
+            currentPage = 0;
+        }
+
+        document.getElementById("comicImage").src =
+        pages[currentPage];
+    }
+</script>
+
+</body>
+</html>
